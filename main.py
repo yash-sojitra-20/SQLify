@@ -184,3 +184,7 @@ few_shot_prompt = FewShotPromptTemplate(
     suffix=PROMPT_SUFFIX,
     input_variables=["input", "table_info", "top_k"], #These variables are used in the prefix and suffix
 )
+
+
+#NewChain creation with FewShotPromptTemplate
+new_chain = create_sql_query_chain(llm, db, prompt=few_shot_prompt)
