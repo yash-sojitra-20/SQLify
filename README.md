@@ -18,4 +18,4 @@ This is an end-to-end LLM project based on Google Palm and Langchain. We are bui
 
 In the UI, users can ask questions in natural language, and SQLify will produce the answers.
 
-![SQLify in Action](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fsponsored%2Fstory%2Fsql-data-is-driving-the-future-of-business%2F&psig=AOvVaw1Ff9b-mSj-wcSKCzrVRpMo&ust=1708844934745000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKiF05bCw4QDFQAAAAAdAAAAABAE)
+![SQLify in Action](https://media.wired.com/photos/641337bd5e3ab3be4fe3e789/master/w_1600%2Cc_limit/sql_normal.gif)
