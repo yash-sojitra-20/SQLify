@@ -1,6 +1,7 @@
-from langchain.llms import GooglePalm
-llm= GooglePalm(google_api_key="AIzaSyATg2P9z5r2nOQg29F0ChNBTIWmmLQlFag")
-llm.temperature=0
-prompts=['hi how are you?']
-llm_result=llm._generate(prompts)
-print(llm_result.generations[0][0].text)
+import os
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.environ.get('GOOGLE_API_KEY')
+from langchain_google_genai import GoogleGenerativeAI
+llm = GoogleGenerativeAI(model="models/text-bison-001", google_api_key=api_key)
+print(llm.invoke("suggest me one indian hotel name" ))
