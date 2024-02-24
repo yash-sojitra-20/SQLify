@@ -18,13 +18,4 @@ This is an end-to-end LLM project based on Google Palm and Langchain. We are bui
 
 In the UI, users can ask questions in natural language, and SQLify will produce the answers.
 
-### How it Works 🤖💬
-
-![SQLify in Action](link-to-your-gif.gif)
-
-## Getting Started 🚀
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/SQLify.git
+![SQLify in Action](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fsponsored%2Fstory%2Fsql-data-is-driving-the-future-of-business%2F&psig=AOvVaw1Ff9b-mSj-wcSKCzrVRpMo&ust=1708844934745000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKiF05bCw4QDFQAAAAAdAAAAABAE)
