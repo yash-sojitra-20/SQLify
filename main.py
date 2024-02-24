@@ -163,5 +163,13 @@ from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
 # print(PROMPT_SUFFIX)
 # Only use the following tables:
 # {table_info}
-
 # Question: {input}
+
+
+#Creation of FewShotPromptTemplate
+from langchain.prompts import FewShotPromptTemplate
+from langchain.prompts.prompt import PromptTemplate
+example_prompt = PromptTemplate(
+    input_variables=["Question", "SQLQuery", "SQLResult","Answer",],
+    template="\nQuestion: {Question}\nSQLQuery: {SQLQuery}\nSQLResult: {SQLResult}\nAnswer: {Answer}",
+)
