@@ -115,3 +115,13 @@ embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-
 from langchain.prompts import SemanticSimilarityExampleSelector
 to_vectorize = [" ".join(example.values()) for example in few_shots]
 # print(to_vectorize)
+
+
+#Store vectorize data to vector_Database
+#Use Chroma as vector_Database
+from langchain_community.vectorstores import Chroma
+vectorstore = Chroma.from_texts(to_vectorize, embeddings, metadatas=few_shots)
+example_selector = SemanticSimilarityExampleSelector(
+    vectorstore=vectorstore,
+    k=2,
+)
