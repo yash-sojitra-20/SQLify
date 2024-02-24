@@ -173,3 +173,14 @@ example_prompt = PromptTemplate(
     input_variables=["Question", "SQLQuery", "SQLResult","Answer",],
     template="\nQuestion: {Question}\nSQLQuery: {SQLQuery}\nSQLResult: {SQLResult}\nAnswer: {Answer}",
 )
+
+
+#Establised connection between GooglePalm (llm) and vector_Database
+#When model get confused it looks in to vector_Database for SemanticSearch
+few_shot_prompt = FewShotPromptTemplate(
+    example_selector=example_selector,
+    example_prompt=example_prompt,
+    prefix=_mysql_prompt,
+    suffix=PROMPT_SUFFIX,
+    input_variables=["input", "table_info", "top_k"], #These variables are used in the prefix and suffix
+)
