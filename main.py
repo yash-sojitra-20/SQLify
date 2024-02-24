@@ -188,3 +188,50 @@ few_shot_prompt = FewShotPromptTemplate(
 
 #NewChain creation with FewShotPromptTemplate
 new_chain = create_sql_query_chain(llm, db, prompt=few_shot_prompt)
+
+
+#sample_query solution using NewChain
+
+# print("newqns1")
+newqns1 = new_chain.invoke({"question": "How many white color Levi's shirt I have?"})
+newans1 = db.run(newqns1)
+# print(newqns1)
+# SELECT sum(stock_quantity) FROM t_shirts WHERE brand = 'Levi' AND color = 'White'
+# print(newans1)
+# [(None,)]
+
+# print("newqns2")
+newqns2 = new_chain.invoke({"question": "How much is the price of the inventory for all small size t-shirts?"})
+newans2 = db.run(newqns2)
+# print(newqns2)
+# SELECT SUM(price*stock_quantity) FROM t_shirts WHERE size = 'S'
+# print(newans2)
+# [(2000,)]
+
+# print("newqns3")
+newqns3 = new_chain.invoke({"question": "How much is the price of all white color levi t shirts?"})
+newans3 = db.run(newqns3)
+# print(newqns3)
+# SELECT sum(price*stock_quantity) FROM t_shirts WHERE brand = 'Levi' AND color = 'White'
+# print(newans3)
+# [(None,)]
+
+# print("newqns4")
+newqns4 = new_chain.invoke({"question": "if we have to sell all the Van Heuson T-shirts today with discounts applied. How much revenue  our store will generate (post discounts)?"})
+newans4 = db.run(newqns4)
+# print(newqns4)
+# SELECT sum(a.total_amount * ((100-COALESCE(discounts.pct_discount,0))/100)) as total_revenue from
+# (select sum(price*stock_quantity) as total_amount, t_shirt_id from t_shirts where brand = 'Van Huesen'
+# group by t_shirt_id) a left join discounts on a.t_shirt_id = discounts.t_shirt_id
+# print(newans4)
+# [(Decimal('3495.00000000000000000000'),)]
+
+# print("newqns5")
+newqns5 = new_chain.invoke({"question": "How much revenue  our store will generate by selling all Van Heuson TShirts without discount?"})
+newans5 = db.run(newqns5)
+# print(newqns5)
+# SELECT SUM(price*stock_quantity) FROM t_shirts WHERE brand = 'Van Huesen'
+# print(newans5)
+# [(4775,)]
+
+#######################################################################################
