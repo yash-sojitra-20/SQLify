@@ -109,3 +109,9 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 # e = embeddings.embed_query("How many white color Levi's shirt I have?")
 # e[:5]
+
+
+#Vectorize sample_query_values for SemanticSearch
+from langchain.prompts import SemanticSimilarityExampleSelector
+to_vectorize = [" ".join(example.values()) for example in few_shots]
+# print(to_vectorize)
