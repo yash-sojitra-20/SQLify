@@ -125,3 +125,16 @@ example_selector = SemanticSimilarityExampleSelector(
     vectorstore=vectorstore,
     k=2,
 )
+
+
+#Generates Query using SemanticSearch
+example_selector.select_examples({"Question": "How many Adidas T shirts I have left in my store?"})
+#Generated queries example
+# [{'Answer': "SELECT stock_quantity FROM t_shirts WHERE brand = 'Nike' AND color = 'White' AND size = 'XS'",
+#   'Question': 'How many t-shirts do we have left for Nike in XS size and white color?',
+#   'SQLQuery': "SELECT sum(stock_quantity) FROM t_shirts WHERE brand = 'Nike' AND color = 'White' AND size = 'XS'",
+#   'SQLResult': 'Result of the SQL query'},
+#  {'Answer': "SELECT SUM(price * stock_quantity) FROM t_shirts WHERE brand = 'Levi'",
+#   'Question': 'If we have to sell all the Levi’s T-shirts today. How much revenue our store will generate without discount?',
+#   'SQLQuery': "SELECT SUM(price * stock_quantity) FROM t_shirts WHERE brand = 'Levi'",
+#   'SQLResult': 'Result of the SQL query'}]
