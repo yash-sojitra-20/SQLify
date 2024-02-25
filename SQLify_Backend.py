@@ -8,7 +8,6 @@ from langchain_community.vectorstores import Chroma
 from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
 from langchain.prompts import FewShotPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
-from db_pass import Password
 from dotenv import load_dotenv
 from db_specifications import dbusername,dbpass,dbhost,dbport,databasename
 
