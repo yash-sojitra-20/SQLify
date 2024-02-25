@@ -15,8 +15,7 @@ few_shots = [
 group by t_shirt_id) a left join discounts on a.t_shirt_id = discounts.t_shirt_id
  """,
      'SQLResult': "Result of the SQL query",
-     'Answer': "[(Decimal('2960.00000000000000000000'),)]"
-} ,
+     'Answer': "[(Decimal('2960.00000000000000000000'),)]"} ,
     
      {'Question' : "If we have to sell all the Levi’s T-shirts today. How much revenue our store will generate without discount?" ,
       'SQLQuery': "SELECT SUM(price * stock_quantity) FROM t_shirts WHERE brand = 'Levi'",
