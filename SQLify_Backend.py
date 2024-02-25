@@ -39,7 +39,12 @@ group by t_shirt_id) a left join discounts on a.t_shirt_id = discounts.t_shirt_i
     {'Question': "How many white color Levi's shirt I have?",
      'SQLQuery' : "SELECT sum(stock_quantity) FROM t_shirts WHERE brand = 'Levi' AND color = 'White'",
      'SQLResult': "Result of the SQL query",
-     'Answer' : '[(None,)]'}
+     'Answer' : '[(None,)]'},
+    
+    {'Question': "show price of blue tshirt of levis with after applying discount.",
+     'SQLQuery' : "SELECT price - (price * pct_discount / 100) AS discounted_price FROM t_shirts JOIN discounts ON t_shirts.t_shirt_id = discounts.t_shirt_id WHERE brand = 'Levi' AND color = 'Blue'",
+     'SQLResult': "Result of the SQL query",
+     'Answer' : '[(21.2500000000000000,),(18.0000000000000000,),(22.0000000000000000,)]'}
 ]
 
 username = "postgres" 
