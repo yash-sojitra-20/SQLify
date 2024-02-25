@@ -67,6 +67,8 @@ streamlit run SQLify_Frontend.py
   - SQLify_Backend.py:Backend logic for processing natural language queries into SQL.
   - SQLify_try.py: Experimental file for testing functionalities.
   - requirements.txt: A list of required Python packages for the project.
-  - .env: Configuration file for storing your Google API key. 
+  - .env: Configuration file for storing your Google API key.
+  - db_specifications.py:Details about used Database.
+ 
 
     ![SQLify in Action](https://media.wired.com/photos/641337bd5e3ab3be4fe3e789/master/w_1600%2Cc_limit/sql_normal.gif)
