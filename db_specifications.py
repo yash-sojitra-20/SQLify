@@ -1,0 +1,5 @@
+dbusername="enter your database username"
+dbpass="enter your database pass"
+dbhost="enter host"
+dbport="enter port number"
+databasename="enter your database name"
