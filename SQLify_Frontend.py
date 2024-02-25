@@ -1,7 +1,7 @@
 import streamlit as st
 from SQLify_Backend import get_chain,db
 
-st.title("T Shirts: Database Q&A 👕")
+st.title("SQLify: Database Q&A 👕")
 
 question = st.text_input("Question: ")
 
@@ -10,5 +10,7 @@ if question:
     qns = chain.invoke({"question": question})
     response = db.run(qns)
 
-    st.header("Answer")
+    st.header("Query: ")
+    st.write(qns)
+    st.header("Answer: ")
     st.write(response)
