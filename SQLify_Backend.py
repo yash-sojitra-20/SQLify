@@ -10,6 +10,7 @@ from langchain.prompts import FewShotPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
 from db_pass import Password
 from dotenv import load_dotenv
+from db_specifications import dbusername,dbpass,dbhost,dbport,databasename
 
 few_shots = [
     {'Question' : "How many t-shirts do we have left for Nike in XS size and white color?",
@@ -47,11 +48,11 @@ group by t_shirt_id) a left join discounts on a.t_shirt_id = discounts.t_shirt_i
      'Answer' : '[(21.2500000000000000,),(18.0000000000000000,),(22.0000000000000000,)]'}
 ]
 
-username = "postgres" 
-password = Password
-host = "localhost" 
-port = "5432"
-mydatabase = "tshirts"
+username = dbusername
+password = dbpass
+host = dbhost 
+port = dbport
+mydatabase = databasename
 pg_uri = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{mydatabase}"
 db = SQLDatabase.from_uri(pg_uri)
 
