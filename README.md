@@ -8,7 +8,8 @@ This is an end-to-end LLM project based on Google Palm and Langchain. We are bui
 
 ## Project Highlights 🌟
 
-- We will build an LLM-based question and answer system using:
+  - Technologies used:
+    
   - Google Palm LLM 🌴
   - Hugging Face embeddings 🤗
   - Streamlit for UI 🚀
@@ -31,7 +32,7 @@ In the UI, users can ask questions in natural language, and SQLify will produce 
 2.Navigate to the project directory:
 
 ```bash
-  cd DataBase_Creation
+  cd SQLify
 ```
 3. Install the required dependencies using pip:
 
@@ -64,11 +65,13 @@ streamlit run SQLify_Frontend.py
     
  ## Project Structure
   - SQLify_Frontend.py: Frontend logic for the Streamlit app.
-  - SQLify_Backend.py:Backend logic for processing natural language queries into SQL.
+  - SQLify_Backend.py: Backend logic for processing natural language queries into SQL.
   - SQLify_try.py: Experimental file for testing functionalities.
   - requirements.txt: A list of required Python packages for the project.
   - .env: Configuration file for storing your Google API key.
-  - db_specifications.py:Details about used Database.
+  - db_specifications.py: Details about used Database.
+  - DataBase_Creation.sql: code for database creation.
+  - FewShots.py: Contains code for Few-Shot learning. 
  
 
     ![SQLify in Action](https://media.wired.com/photos/641337bd5e3ab3be4fe3e789/master/w_1600%2Cc_limit/sql_normal.gif)
